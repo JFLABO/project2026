@@ -1,0 +1,79 @@
+
+
+
+import yfinance as yf
+import json
+
+shouken_code = "AAPL"  # 日本株は証券コードの後ろに「.T」を付ける
+stock = yf.Ticker(shouken_code)
+# hist_data = stock.history(period="1wk")  # 直近1週間の株価データ
+# print(json.dumps(ticker_data.info, indent=4))
+
+# # 1. 株価・時系列データ
+# history = ticker_data.history()  # 始値・高値・安値・終値・調整後終値・出来高を取得
+# print(history)
+
+# dividends = stock.dividends  # 配当履歴を取得
+# print(dividends)
+
+# splits = stock.splits  # 株式分割履歴を取得
+# print(splits)
+
+# # 2. 企業・銘柄情報
+info = stock.info  # 会社名、業種、所在地などの基本情報を取得
+# print(info)
+print(json.dumps(info, indent=4))
+# print(info.get("website"))
+# # 3. 財務データ
+# income_stmt = stock.income_stmt  # 損益計算書を取得
+# print(income_stmt)
+
+# balance_sheet = stock.balance_sheet  # 貸借対照表を取得
+# print(balance_sheet)
+
+# cashflow = stock.cashflow  # キャッシュフロー計算書を取得
+# print(cashflow)
+
+# # 4. 株主・保有者情報
+# major_holders = stock.major_holders  # 大株主情報を取得
+# print(major_holders)
+
+# institutional_holders = stock.institutional_holders  # 機関投資家情報を取得
+# print(institutional_holders)
+
+# mutualfund_holders = stock.mutualfund_holders  # 投資信託保有者情報を取得
+# print(mutualfund_holders)
+
+# # 5. 配当・分割情報（重複部分も含む）
+# dividends, splits は上記参照
+# capital_gains = stock.capital_gains  # キャピタルゲイン情報を取得
+# print(capital_gains)
+
+# # 6. オプション・派生商品
+# options = stock.options  # オプション満期日一覧を取得
+# print(options)
+
+# # 各満期日のオプションデータを取得（例: options[0]の日付）
+# # option_chain = stock.option_chain(options[0])
+# # print(option_chain)
+
+# # 7. ニュース・アナリスト情報
+# news = stock.news  # 関連ニュースを取得
+# print(json.dumps(news, indent=4))
+
+# recommendations = stock.recommendations  # アナリスト推奨情報を取得
+# print(recommendations)
+
+# earnings_dates = stock.earnings_dates  # 決算発表日・予想EPS・実績EPSを取得
+# print(earnings_dates)
+
+# calendar = stock.calendar  # 重要イベント日程を取得
+# print(calendar)
+
+# # 8. サステナビリティ・ESG情報
+# sustainability = stock.sustainability  # サステナビリティ指標を取得
+# print(sustainability)
+
+# # 9. 予測・分析データ
+# analysis = stock.analysis  # アナリストの収益・売上予測を取得
+# print(analysis)
